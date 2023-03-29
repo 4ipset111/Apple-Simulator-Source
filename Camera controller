@@ -1,0 +1,19 @@
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+    public float cameraSpeed = 5.0f;
+    public Transform target;
+
+    void Update()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+
+            transform.RotateAround(target.position, Vector3.up, mouseX * cameraSpeed * Time.deltaTime);
+            transform.RotateAround(target.position, transform.right, -mouseY * cameraSpeed * Time.deltaTime);
+        }
+    }
+}
