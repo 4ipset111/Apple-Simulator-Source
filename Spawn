@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spawn : MonoBehaviour
+{
+    public GameObject playerPrefab;
+    public Vector3 spawnPoint;
+
+    void Start()
+    {
+        GameObject player = Instantiate(playerPrefab, spawnPoint, Quaternion.identity);
+    }
+}
